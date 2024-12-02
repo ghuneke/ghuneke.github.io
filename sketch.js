@@ -41,7 +41,8 @@ function setup() {
   serial.on("portavailable", openPort);
   // handle serial errors:
   serial.on("requesterror", portError);
-
+  // handle any incoming serial data:
+  serial.on("data", serialEvent);
   serial.on("close", makePortButton);
 }
 
